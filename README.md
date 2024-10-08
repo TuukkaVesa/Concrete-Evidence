@@ -1,4 +1,4 @@
-# Concrete-Evidence<<<<<<< HEAD
+# Concrete-Evidence
 # Raw Material Module Project
 
 ## Overview
