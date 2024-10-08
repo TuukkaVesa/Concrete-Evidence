@@ -1,0 +1,154 @@
+{
+  "parameters": [
+    {
+      "name": "machine_id",
+      "initial_value": "CR-01",
+      "units": "N/A",
+      "range": {
+        "low": "N/A",
+        "high": "N/A"
+      },
+      "randomization_style": "none",
+      "description": "Unique identifier for the crusher."
+    },
+    {
+      "name": "crusher_speed",
+      "initial_value": 1200,
+      "units": "RPM",
+      "range": {
+        "low": 1000,
+        "high": 1400
+      },
+      "randomization_style": "normal",
+      "description": "Speed of the crusher motor in revolutions per minute."
+    },
+    {
+      "name": "crusher_load",
+      "initial_value": 2000,
+      "units": "kg",
+      "range": {
+        "low": 1500,
+        "high": 2500
+      },
+      "randomization_style": "normal",
+      "description": "Load applied to the crusher, representing the weight of material being processed."
+    },
+    {
+      "name": "power_consumption",
+      "initial_value": 30,
+      "units": "kW",
+      "range": {
+        "low": 25,
+        "high": 35
+      },
+      "randomization_style": "normal",
+      "description": "Power consumption of the crusher during operation."
+    },
+    {
+      "name": "belt_speed",
+      "initial_value": 1.5,
+      "units": "m/s",
+      "range": {
+        "low": 1.0,
+        "high": 2.0
+      },
+      "randomization_style": "uniform",
+      "description": "Speed of the conveyor belt transporting crushed material."
+    },
+    {
+      "name": "vibration_level",
+      "initial_value": 5.0,
+      "units": "mm/s",
+      "range": {
+        "low": 4.0,
+        "high": 6.5
+      },
+      "randomization_style": "normal",
+      "description": "General vibration level of the crusher during operation."
+    },
+    {
+      "name": "crusher_torque",
+      "initial_value": 8000,
+      "units": "Nm",
+      "range": {
+        "low": 7000,
+        "high": 10000
+      },
+      "randomization_style": "weibull",
+      "description": "Torque applied by the crusher's motor to process material."
+    },
+    {
+      "name": "machine_wear_index",
+      "initial_value": 10,
+      "units": "%",
+      "range": {
+        "low": 0,
+        "high": 100
+      },
+      "randomization_style": "exponential",
+      "description": "Percentage representing wear and tear of the crusher over time."
+    },
+    {
+      "name": "maintenance_time_since_last_service",
+      "initial_value": 500,
+      "units": "hours",
+      "range": {
+        "low": 0,
+        "high": 1000
+      },
+      "randomization_style": "lognormal",
+      "description": "Time in hours since the crusher was last maintained."
+    },
+    {
+      "name": "advanced_vibration",
+      "initial_value": 0.5,
+      "units": "mm/s²",
+      "range": {
+        "low": 0.3,
+        "high": 1.0
+      },
+      "randomization_style": "weibull",
+      "description": "Advanced vibration measurement used for preemptive maintenance."
+    },
+    {
+      "name": "overload_events",
+      "initial_value": 0,
+      "units": "count",
+      "range": {
+        "low": 0,
+        "high": 3
+      },
+      "randomization_style": "poisson",
+      "description": "Number of overload events experienced by the crusher."
+    },
+    {
+      "name": "temperature_of_bearings",
+      "initial_value": 60,
+      "units": "°C",
+      "range": {
+        "low": 50,
+        "high": 75
+      },
+      "randomization_style": "normal",
+      "external_influence": {
+        "enabled": true,
+        "external_factor": "outside_temperature",
+        "impact_coefficient": 0.1,
+        "formula": "bearing_temp = initial_value + (impact_coefficient * (outside_temperature - initial_value))",
+        "description": "Bearing temperature is influenced by outside temperature."
+      },
+      "description": "Temperature of the crusher's bearings."
+    },
+    {
+      "name": "remaining_useful_life",
+      "initial_value": 1000,
+      "units": "hours",
+      "range": {
+        "low": 500,
+        "high": 2000
+      },
+      "randomization_style": "weibull_inverse",
+      "description": "Estimated remaining useful life of the crusher."
+    }
+  ]
+}
