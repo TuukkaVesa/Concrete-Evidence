@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Raw Material Module Project
 
 ## Overview
@@ -144,3 +145,6 @@ Please feel free to contribute! Whether it's bug fixes, suggestions for new feat
 ## Contact
 
 For any questions or help, please reach out via **issues** in the GitHub repository.
+=======
+# Concrete-Evidence
+>>>>>>> 01715ad921c9fbfed79ff1cf12a9f12e438e75e4
