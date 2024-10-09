@@ -52,3 +52,21 @@ This version marks the initial setup and structure for the Raw Material Module p
 - **Data Validation and Monitoring**: Implement a data validation layer to ensure that input parameters are within realistic limits.
 - **Visualization Tools**: Develop integration with **Grafana** or Google Cloud tools for visualizing historical and real-time data.
 
+### **Progress Summary for Today (2024-10-08)**
+- **ERP and Scheduler Module Review**: Refined the ERP and Scheduler functions for simplicity and MVP alignment.
+- **JSON Configurations Created**: Developed initial JSON configurations for ERP and Scheduler modules.
+- **Simplified MVP Features**: Removed optional metadata fields and simplified the priority algorithm from weighted to FIFO.
+- **Added Comments for Complexity Review**: Provided feedback on areas of complexity for the ERP and Scheduler functions.
+- **Consistent MQTT Topics**: Ensured consistent topic naming across ERP and Scheduler to align with the Unified Namespace.
+
+### **Changelog (2024-10-08)**
+1. **ERP Module**:
+   - Created initial configuration JSON.
+   - Removed optional metadata for a simplified MVP.
+   - Ensured consistent MQTT topic naming.
+
+2. **Scheduler Module**:
+   - Created initial configuration JSON.
+   - Changed priority management to FIFO for simplicity.
+   - Integrated consistent MQTT topic naming.
+

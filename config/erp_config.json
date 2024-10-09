@@ -1,0 +1,61 @@
+{
+  "erp_module": {
+    "orders": {
+      "create_order": {
+        "endpoint": "/api/v1/orders/create",
+        "method": "POST",
+        "parameters": [
+          "order_id",
+          "product_type",
+          "quantity",
+          "priority",
+          "due_date"
+        ],
+        "description": "Create a new production order with all required details."
+      },
+      "update_order": {
+        "endpoint": "/api/v1/orders/update",
+        "method": "PUT",
+        "parameters": [
+          "order_id",
+          "updates"
+        ],
+        "description": "Update an existing production order based on given parameters."
+      },
+      "publish_order": {
+        "mqtt_topic": "erp/orders/new",
+        "qos": 1,
+        "payload_fields": [
+          "order_id",
+          "product_type",
+          "quantity",
+          "priority",
+          "due_date"
+        ],
+        "description": "Publish the order to MQTT for the scheduler to pick up."
+      },
+      "order_status_tracking": {
+        "mqtt_topic": "erp/orders/status",
+        "parameters": [
+          "order_id",
+          "status",
+          "timestamp"
+        ],
+        "description": "Track and modify order statuses such as in production, awaiting shipment, or completed."
+      },
+      "order_history": {
+        "data_storage": "BigQuery",
+        "table_name": "order_history",
+        "fields": [
+          "order_id",
+          "product_type",
+          "quantity",
+          "priority",
+          "due_date",
+          "status_history"
+        ],
+        "description": "Store historical data for completed orders for further analysis."
+      }
+    }
+  }
+}
